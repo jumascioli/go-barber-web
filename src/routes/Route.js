@@ -2,15 +2,15 @@ import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import AuthLayout from '../layouts/Auth';
-import DefaultLayout from '../layouts/Default';
+import AuthLayout from '~/layouts/Auth';
+import DefaultLayout from '~/layouts/Default';
 
 export default function RouterWrapper({
   component: Component,
   isPrivate,
   ...rest
 }) {
-  const signed = true;
+  const signed = false;
 
   if (!signed && isPrivate) {
     return <Redirect to="/" />;
