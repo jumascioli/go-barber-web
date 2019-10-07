@@ -7,11 +7,17 @@ export default createGlobalStyle`
     outline: 0;
   }
 
+  html {
+    height: 100%;
+  }
+
   body {
     -webkit-font-smoothing: antialiased;
     font-family: "Roboto", "Ubuntu", -apple-system, BlinkMacSystemFont, "Segoe UI",
       "Oxygen", "Helvetica Neue", Arial, sans-serif;
     font-size: 90%;
+    height: 100%;
+    margin: 0;
   }
 
   input, button {
@@ -23,7 +29,6 @@ export default createGlobalStyle`
   }
 
   #root {
-    margin: 0 auto;
-    max-width: 63.75rem;
+    height: 100%;
   }
 `;
