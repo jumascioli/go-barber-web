@@ -25,7 +25,7 @@ export const Content = styled.div`
       color: #fff;
       font-size: 0.875em;
       height: 3em;
-      margin: 0 0 0.625em;
+      margin: 0.625em 0 0;
       padding: 0 1em;
 
       &::placeholder {
@@ -41,7 +41,7 @@ export const Content = styled.div`
       font-size: 0.875em;
       font-weight: bold;
       height: 3em;
-      margin: 0.5em 0 0;
+      margin: 1em 0 0;
       padding: 0 1em;
       transition: background-color 0.15s ease-in-out;
 
@@ -63,6 +63,15 @@ export const Content = styled.div`
       &:hover {
         opacity: 1;
       }
+    }
+
+    span {
+      align-self: flex-start;
+      color: #fff;
+      font-size: 0.875em;
+      font-style: italic;
+      margin: 0.125em 0 0.5em;
+      opacity: 0.8;
     }
   }
 `;
