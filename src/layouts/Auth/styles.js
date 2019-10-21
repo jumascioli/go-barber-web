@@ -9,9 +9,9 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`
-  width: 100%;
   max-width: 316px;
   text-align: center;
+  width: 100%;
 
   form {
     display: flex;
@@ -23,12 +23,45 @@ export const Content = styled.div`
       border: none;
       border-radius: 4px;
       color: #fff;
+      font-size: 0.875em;
       height: 3em;
       margin: 0 0 0.625em;
       padding: 0 1em;
 
       &::placeholder {
         color: rgba(255, 255, 255, 0.7);
+      }
+    }
+
+    button {
+      background-color: #3b9eff;
+      border: 0;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 0.875em;
+      font-weight: bold;
+      height: 3em;
+      margin: 0.5em 0 0;
+      padding: 0 1em;
+      transition: background-color 0.15s ease-in-out;
+
+      &:focus,
+      &:hover {
+        background-color: #2c8cea;
+      }
+    }
+
+    a {
+      color: #fff;
+      font-size: 0.875em;
+      margin-top: 1em;
+      opacity: 0.7;
+      text-decoration: none;
+      transition: opacity 0.15s ease-in-out;
+
+      &:focus,
+      &:hover {
+        opacity: 1;
       }
     }
   }

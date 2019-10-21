@@ -15,7 +15,7 @@ export default createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     font-family: "Roboto", "Ubuntu", -apple-system, BlinkMacSystemFont, "Segoe UI",
       "Oxygen", "Helvetica Neue", Arial, sans-serif;
-    font-size: 90%;
+    font-size: 100%;
     height: 100%;
     margin: 0;
   }
