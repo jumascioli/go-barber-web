@@ -70,7 +70,7 @@ export const Content = styled.div`
       color: #fff;
       font-size: 0.875em;
       font-style: italic;
-      margin: 0.125em 0 0.5em;
+      margin: 0.25em 0 0.5em 0.25em;
       opacity: 0.8;
     }
   }
