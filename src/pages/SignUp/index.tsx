@@ -20,7 +20,7 @@ import Link from '../../components/Link';
 
 import SignUpImage from '../../assets/images/sign-up-background.png';
 
-import { Container, Content } from './styles';
+import { Wrapper, Content } from './styles';
 import validationSchema from './validation-schema';
 
 const SignUp: React.FC = () => {
@@ -39,7 +39,7 @@ const SignUp: React.FC = () => {
   }, []);
 
   return (
-    <Container>
+    <Wrapper>
       <BackgroundImg image={SignUpImage} />
 
       <Content>
@@ -62,7 +62,7 @@ const SignUp: React.FC = () => {
 
         <Link href="create-account">Voltar para logon</Link>
       </Content>
-    </Container>
+    </Wrapper>
   );
 };
 

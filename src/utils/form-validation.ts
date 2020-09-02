@@ -33,4 +33,8 @@ const validate = async (
   });
 };
 
-export { getValidationErrors, setErrors, clearErrors, validate };
+const isYupError = (error: Error): boolean => {
+  return error instanceof ValidationError;
+};
+
+export { getValidationErrors, setErrors, clearErrors, validate, isYupError };

@@ -10,7 +10,11 @@ import {
   setErrors,
   clearErrors,
   validate,
+  isYupError,
 } from '../../utils/form-validation';
+
+import { useAuth } from '../../hooks/auth';
+import { useToast } from '../../hooks/toast';
 
 import Logo from '../../components/Logo';
 import BackgroundImg from '../../components/BackgroundImg';
@@ -20,26 +24,49 @@ import Link from '../../components/Link';
 
 import signInImage from '../../assets/images/sign-in-background.png';
 
-import { Container, Content } from './styles';
+import { Wrapper, Content } from './styles';
 import validationSchema from './validation-schema';
 
 const SignIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
-  const handleSubmit = useCallback(async (data: DynamicFormObject) => {
-    try {
-      clearErrors(formRef);
+  const { signIn } = useAuth();
+  const { addToast } = useToast();
 
-      await validate(validationSchema, data);
-    } catch (error) {
-      const errors = getValidationErrors(error);
+  const handleSubmit = useCallback(
+    async (data: DynamicFormObject) => {
+      try {
+        clearErrors(formRef);
 
-      setErrors(formRef, errors);
-    }
-  }, []);
+        await validate(validationSchema, data);
+
+        const { email, password } = data;
+
+        await signIn({
+          email,
+          password,
+        });
+      } catch (error) {
+        if (isYupError(error)) {
+          const errors = getValidationErrors(error);
+
+          setErrors(formRef, errors);
+
+          return;
+        }
+
+        addToast({
+          type: 'success',
+          title: 'Erro na autenticação',
+          description: 'Ocorreu um erro ao fazer login, cheque as credenciais',
+        });
+      }
+    },
+    [signIn, addToast],
+  );
 
   return (
-    <Container>
+    <Wrapper>
       <Content>
         <Logo />
 
@@ -62,7 +89,7 @@ const SignIn: React.FC = () => {
       </Content>
 
       <BackgroundImg image={signInImage} />
-    </Container>
+    </Wrapper>
   );
 };
 
