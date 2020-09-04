@@ -1,11 +1,12 @@
-import React, { AnchorHTMLAttributes } from 'react';
+import React from 'react';
+import { LinkProps } from 'react-router-dom';
 
-import { Container } from './styles';
+import { Wrapper } from './styles';
 
-type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement>;
-
-const Link: React.FC<LinkProps> = ({ children, ...rest }) => (
-  <Container {...rest}>{children}</Container>
+const Link: React.FC<LinkProps> = ({ children, to, ...rest }) => (
+  <Wrapper to={to} {...rest}>
+    {children}
+  </Wrapper>
 );
 
 export default Link;

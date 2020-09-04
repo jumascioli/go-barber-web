@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+import { appearFromLeft } from '../../styles/animations';
+
+const Wrapper = styled.div`
   display: flex;
   align-items: stretch;
   height: 100vh;
 `;
 
-export const Content = styled.section`
+const Content = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,3 +26,14 @@ export const Content = styled.section`
     margin-bottom: 1.5rem;
   }
 `;
+
+const AnimatedContent = styled.div`
+  animation: ${appearFromLeft} 0.5s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+`;
+
+export { Wrapper, Content, AnimatedContent };

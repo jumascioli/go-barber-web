@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { Link, LinkProps } from 'react-router-dom';
 
-export const Container = styled.a`
+export const Wrapper = styled(Link)<LinkProps>`
   color: #fff;
   display: block;
   margin-top: 1.5rem;
